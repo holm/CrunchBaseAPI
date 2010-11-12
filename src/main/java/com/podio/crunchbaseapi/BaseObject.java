@@ -107,7 +107,10 @@ public class BaseObject {
 		List<String> split = new ArrayList<String>();
 		String[] split2 = in.split(",");
 		for (String v : split2) {
-			split.add(v.trim());
+			String trimmed = v.trim();
+			if (trimmed.length() > 0) {
+				split.add(trimmed);
+			}
 		}
 
 		return split;

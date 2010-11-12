@@ -40,7 +40,8 @@ public class BaseCompany extends BaseObject {
 	}
 
 	public LocalDate getFounded() {
-		if (foundedYear != null) {
+		if (foundedYear != null && foundedMonth != null && foundedDay != null
+				&& foundedYear > 1900) {
 			return new LocalDate(foundedYear, foundedMonth, foundedDay);
 		} else {
 			return null;
