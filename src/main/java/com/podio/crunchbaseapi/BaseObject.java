@@ -31,6 +31,8 @@ public class BaseObject {
 
 	private String overview;
 
+	private Image image;
+
 	public String getPermalink() {
 		return permalink;
 	}
@@ -160,5 +162,13 @@ public class BaseObject {
 
 	public void setOverview(String overview) {
 		this.overview = overview;
+	}
+
+	public Image getImage() {
+		return image;
+	}
+
+	public void setImage(Image image) {
+		this.image = image;
 	}
 }

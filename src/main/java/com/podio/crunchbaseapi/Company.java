@@ -1,5 +1,7 @@
 package com.podio.crunchbaseapi;
 
+import java.util.List;
+
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.joda.time.LocalDate;
 
@@ -14,6 +16,8 @@ public class Company extends BaseCompany {
 	private Integer deadpooledDay;
 
 	private String deadpooledUrl;
+
+	private List<Relationship> relationships;
 
 	@JsonProperty("category_code")
 	public String getCategoryCode() {
@@ -71,5 +75,13 @@ public class Company extends BaseCompany {
 	@JsonProperty("deadpooled_url")
 	public void setDeadpooledUrl(String deadpooledUrl) {
 		this.deadpooledUrl = deadpooledUrl;
+	}
+
+	public List<Relationship> getRelationships() {
+		return relationships;
+	}
+
+	public void setRelationships(List<Relationship> relationships) {
+		this.relationships = relationships;
 	}
 }

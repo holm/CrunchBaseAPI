@@ -30,6 +30,7 @@ public class CrunchBaseAPI {
 		ClientConfig config = new DefaultClientConfig();
 		config.getSingletons().add(getJsonProvider());
 		Client client = Client.create(config);
+		client.setReadTimeout(30 * 1000);
 
 		URI uri;
 		try {

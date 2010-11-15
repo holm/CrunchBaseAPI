@@ -26,5 +26,4 @@ public class CustomJacksonJsonProvider extends JacksonJsonProvider {
 				|| (mediaType.getType().equalsIgnoreCase("application") && mediaType
 						.getSubtype().equals("x-javascript"));
 	}
-
 }
