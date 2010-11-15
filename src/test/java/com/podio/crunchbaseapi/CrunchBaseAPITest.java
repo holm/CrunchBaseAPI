@@ -50,6 +50,7 @@ public class CrunchBaseAPITest {
 				21, 22, 15, 0, DateTimeZone.UTC));
 		Assert.assertEquals(company.getUpdatedAt(), new DateTime(2010, 11, 4,
 				6, 20, 5, 0, DateTimeZone.UTC));
+		Assert.assertEquals(company.getImage().getAvailableSizes().size(), 3);
 	}
 
 	@Test

@@ -6,17 +6,18 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 public class Image {
 
-	private List<List<Object>> availableSizes;
+	private List<ImageSize> availableSizes;
 
 	private String attribution;
 
 	@JsonProperty("available_sizes")
-	public List<List<Object>> getAvailableSizes() {
+	public List<ImageSize> getAvailableSizes() {
 		return availableSizes;
 	}
 
 	@JsonProperty("available_sizes")
-	public void setAvailableSizes(List<List<Object>> availableSizes) {
+	// @JsonDeserialize(contentAs = ImageSize.class)
+	public void setAvailableSizes(List<ImageSize> availableSizes) {
 		this.availableSizes = availableSizes;
 	}
 
@@ -26,20 +27,5 @@ public class Image {
 
 	public void setAttribution(String attribution) {
 		this.attribution = attribution;
-	}
-
-	public String getLargest() {
-		int max = 0;
-		String location = null;
-
-		for (List<Object> object : availableSizes) {
-			List<Integer> size = (List<Integer>) object.get(0);
-			if (size.get(0) > max) {
-				max = size.get(0);
-				location = (String) object.get(1);
-			}
-		}
-
-		return location;
 	}
 }
